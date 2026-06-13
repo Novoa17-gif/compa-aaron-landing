@@ -184,9 +184,37 @@
     animation:pulse 2s infinite;
   }
   @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.4} }
+  .nav-toggle{ display:none; }
   @media(max-width:760px){
-    .nav-links{ gap:18px } .nav-links a .num{display:none}
+    .nav-links a .num{display:none}
     .logo .tag{ display:none } .nav-status{ display:none }
+    .logo .mark{ font-size:22px; white-space:nowrap }
+    .nav-toggle{
+      display:flex; flex-direction:column; gap:5px;
+      width:34px; height:34px; align-items:center; justify-content:center;
+      background:none; border:0; padding:0; cursor:pointer;
+    }
+    .nav-toggle span{
+      width:24px; height:2px; background:var(--bone);
+      transition: transform .3s, opacity .2s;
+    }
+    .nav-row.open .nav-toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .nav-row.open .nav-toggle span:nth-child(2){ opacity:0; }
+    .nav-row.open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .nav-links{
+      position:absolute; top:73px; left:0; right:0;
+      flex-direction:column; gap:0; align-items:stretch;
+      background:rgba(10,8,7,.97);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--rule);
+      max-height:0; overflow:hidden;
+      transition: max-height .35s ease;
+    }
+    .nav-row.open .nav-links{ max-height:240px; }
+    .nav-links a{
+      padding:18px 24px; font-size:13px; letter-spacing:.18em;
+      border-top:1px solid var(--rule);
+    }
   }
 
   /* ====== HERO ====== */
@@ -198,7 +226,7 @@
     align-items:center;
   }
   .hero-left{ padding-top:24px; }
-  @media(max-width:980px){ .hero-grid{ grid-template-columns:1fr; min-height:auto } }
+  @media(max-width:980px){ .hero-grid{ grid-template-columns:1fr; min-height:auto } .hero-side{ display:none } }
 
   .hero-meta{
     display:flex; align-items:center; gap:14px; color:var(--bone-dim);
@@ -542,6 +570,23 @@
     display:grid; grid-template-columns: 1.2fr .8fr; gap:32px;
   }
   @media(max-width:900px){ .ubi-grid{ grid-template-columns:1fr } }
+  .ubi-photo{ display:none; }
+  @media(max-width:980px){
+    .ubi-photo{
+      display:block; position:relative; overflow:hidden;
+      border:1px solid var(--rule); aspect-ratio: 16/10; margin-bottom:32px;
+    }
+    .ubi-photo img{
+      width:100%; height:100%; object-fit:cover;
+      filter: contrast(1.12) saturate(0.92);
+    }
+    .ubi-photo::after{
+      content:"El local"; position:absolute; left:14px; bottom:12px;
+      font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.18em;
+      text-transform:uppercase; color:var(--bone);
+      background:rgba(10,8,7,.78); border:1px solid var(--gold-soft); padding:6px 10px;
+    }
+  }
   .map-wrap{
     position:relative; overflow:hidden; border:1px solid var(--rule);
     aspect-ratio: 5/4; background:#0a0807;
@@ -808,7 +853,7 @@
       <span class="mark">Compa <em>Aaron</em></span>
       <span class="tag mono">Barbería · Ocotlán</span>
     </a>
-    <nav class="nav-links" aria-label="Principal">
+    <nav class="nav-links" id="navMenu" aria-label="Principal">
       <a href="#servicios"><span class="num">01</span>Servicios</a>
       <a href="#servicios"><span class="num">02</span>Precios</a>
       <a href="#ubicacion"><span class="num">03</span>Dónde estamos</a>
@@ -817,6 +862,9 @@
       <span class="dot" id="statusDot"></span>
       <span class="mono" id="statusTxt">Abierto</span>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -1025,6 +1073,10 @@
       </div>
     </div>
 
+    <div class="ubi-photo reveal">
+      <img src="images/barberia-hero.jpg" alt="Interior de la barbería Compa Aaron en el Centro de Ocotlán, Jalisco" loading="lazy" width="898" height="945" />
+    </div>
+
     <div class="ubi-grid">
       <div class="map-wrap reveal">
         <div class="map-overlay">
@@ -1166,6 +1218,23 @@
   }
   updateStatus();
   setInterval(updateStatus, 60000);
+
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const navRow = document.querySelector('.nav-row');
+  if (navToggle && navRow) {
+    const close = () => {
+      navRow.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
+    };
+    navToggle.addEventListener('click', () => {
+      const open = navRow.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    });
+    navRow.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', close));
+  }
 
   // Subtle parallax on hero photo
   const heroPhoto = document.querySelector('.hero-photo img');
