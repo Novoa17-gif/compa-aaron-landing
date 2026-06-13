@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Compa Aaron | Barbería en el Centro de Ocotlán, Jalisco</title>
-<meta name="description" content="Compa Aaron. Barbería en el Centro de Ocotlán, Jalisco. Corte, barba, ceja. Sin cita. Lun a Sáb, 10:00 a 20:00." />
+<meta name="description" content="Compa Aaron. Barbería en el Centro de Ocotlán, Jalisco. Corte, barba, ceja. Sin cita. Lun–Sáb 10–14 y 16–20. Dom 10–14." />
 <meta name="keywords" content="barbería Ocotlán, corte de cabello hombre Ocotlán Jalisco, barbería Centro Ocotlán, barba Ocotlán, barbería cerca de mí, Compa Aaron" />
 <link rel="canonical" href="https://compaaron.mx/" />
-<link rel="preload" as="image" href="images/corte-5.jpg">
+<link rel="preload" as="image" href="images/barberia-hero.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230c0a09'/%3E%3Ctext x='16' y='23' font-family='Georgia%2C serif' font-weight='700' font-size='22' fill='%23c9a55c' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
 <!-- Open Graph -->
@@ -17,7 +17,7 @@
 <meta property="og:title" content="Compa Aaron — Barbería en el Centro de Ocotlán, Jalisco" />
 <meta property="og:description" content="Corte. Barba. Ceja. Centro de Ocotlán, Jalisco. Sin cita." />
 <meta property="og:url" content="https://compaaron.mx/" />
-<meta property="og:image" content="https://compaaron.mx/images/corte-5.jpg" />
+<meta property="og:image" content="https://compaaron.mx/images/barberia-hero.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <!-- Schema.org LocalBusiness -->
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "name": "Compa Aaron",
-  "image": "https://compaaron.mx/images/corte-5.jpg",
+  "image": "https://compaaron.mx/images/barberia-hero.jpg",
   "url": "https://compaaron.mx/",
   "description": "Barbería en el Centro de Ocotlán, Jalisco. Corte, barba, ceja. Sin cita.",
   "priceRange": "$$",
@@ -41,8 +41,9 @@
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 20.3540, "longitude": -102.7700 },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "00:00", "closes": "00:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "16:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "14:00" }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -129,26 +130,6 @@
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; position:relative; }
   @media(max-width:700px){ .wrap{padding:0 20px} }
 
-  /* Vertical edge tickers */
-  .edge{
-    position:fixed; top:0; bottom:0; width:36px;
-    display:flex; flex-direction:column; align-items:center; justify-content:space-between;
-    padding:24px 0; z-index:50; pointer-events:none;
-  }
-  .edge.left{ left:0; border-right:1px solid var(--rule); }
-  .edge.right{ right:0; border-left:1px solid var(--rule); }
-  .edge .v{
-    writing-mode:vertical-rl; transform:rotate(180deg);
-    color:var(--bone-dim);
-  }
-  .edge.right .v{ transform:rotate(0deg); writing-mode:vertical-rl; }
-  .edge .stripe{
-    width:6px; height:80px; border-radius:3px;
-    background:repeating-linear-gradient(180deg, var(--blood) 0 10px, var(--bone) 10px 20px, #0a0807 20px 30px);
-    box-shadow:0 0 24px rgba(181,29,29,.45);
-  }
-  @media(max-width:900px){ .edge{display:none} }
-
   /* ====== NAV ====== */
   .nav{
     position:sticky; top:0; z-index:40;
@@ -209,13 +190,12 @@
   }
 
   /* ====== HERO ====== */
-  .hero{ position:relative; padding:60px 0 120px; }
+  .hero{ position:relative; padding:40px 0 90px; }
   .hero-grid{
     display:grid;
     grid-template-columns: 1.1fr .9fr;
     gap:48px;
-    align-items:start;
-    min-height:calc(100vh - 140px);
+    align-items:center;
   }
   .hero-left{ padding-top:24px; }
   @media(max-width:980px){ .hero-grid{ grid-template-columns:1fr; min-height:auto } }
@@ -270,11 +250,11 @@
 
   .hero-side{
     position:relative;
-    align-self:stretch;
   }
   .hero-photo{
-    position:relative; aspect-ratio: 3/4; border-radius:2px; overflow:hidden;
-    box-shadow: 0 40px 80px -20px rgba(0,0,0,.7), 0 0 0 1px var(--rule);
+    position:relative; aspect-ratio: 898/945; overflow:hidden;
+    -webkit-mask-image: radial-gradient(85% 75% at 50% 45%, #000 45%, transparent 88%);
+    mask-image: radial-gradient(85% 75% at 50% 45%, #000 45%, transparent 88%);
   }
   .hero-photo img{
     width:100%; height:100%; object-fit:cover;
@@ -283,30 +263,30 @@
     transition: transform 1.2s ease;
   }
   .hero-photo:hover img{ transform:scale(1.08) }
-  .hero-photo::before{
-    content:""; position:absolute; inset:0; z-index:2;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(10,8,7,.85) 100%);
+  /* Hero availability + CTA */
+  .hero-avail{
+    display:flex; flex-direction:column; gap:6px;
+    border-left:3px solid var(--blood-glow); padding-left:16px;
   }
-  .hero-photo-stamp{
-    position:absolute; left:18px; bottom:18px; z-index:3;
-    color:var(--bone); display:flex; flex-direction:column; gap:4px;
+  .hero-avail .lbl{ color:var(--gold); }
+  .hero-avail .txt{
+    font-family:"Fraunces", serif; font-size:26px; line-height:1;
+    color:var(--bone); font-weight:600;
   }
-  .hero-photo-stamp .big{
-    font-family:"Bebas Neue", sans-serif; font-size:30px; line-height:1;
-    letter-spacing:.02em;
+  .btn-wsp{
+    display:inline-flex; align-items:center; gap:12px;
+    background:var(--gold); color:#0c0a09;
+    font-family:"Bebas Neue", sans-serif; font-size:22px; letter-spacing:.04em;
+    padding:16px 28px; border-radius:2px;
+    box-shadow:0 8px 28px rgba(201,165,92,.28);
+    transition: transform .25s, box-shadow .25s, background .25s;
   }
-  .hero-photo-stamp .sm{ color:var(--gold); font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; }
-
-  /* Hero corner ticker */
-  .hero-ticker{
-    position:absolute; right:-10px; top:18%;
-    border:1px solid var(--rule); padding:14px 16px;
-    background:rgba(20,16,14,.7); backdrop-filter:blur(6px);
-    color:var(--bone-dim); max-width:240px;
+  .btn-wsp svg{ width:22px; height:22px; fill:#0c0a09; flex:0 0 auto; }
+  .btn-wsp:hover{
+    transform:translateY(-3px);
+    background:#dcb96c;
+    box-shadow:0 14px 36px rgba(201,165,92,.42);
   }
-  .hero-ticker .lbl{ color:var(--gold); font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.16em; }
-  .hero-ticker .txt{ font-family:"Fraunces", serif; font-style:italic; margin-top:6px; color:var(--bone); }
-  @media(max-width:980px){ .hero-ticker{ position:static; max-width:none; margin-top:24px } }
 
   /* ====== SECTION CHROME ====== */
   .section-head{
@@ -451,51 +431,60 @@
   .sobre-sig .nm{ font-family:"Fraunces", serif; font-style:italic; font-size:24px; }
   .sobre-sig .rl{ color:var(--bone-dim); font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
 
-  /* ====== GALERIA ====== */
+  /* ====== GALERIA — acordeón expandible ====== */
   .galeria{ padding:30px 0 110px }
-  .gal-grid{
-    display:grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap:16px;
-    auto-rows: auto;
+  .gal-accordion{
+    display:flex; gap:12px; height:560px; width:100%;
   }
   .gal-cell{
     position:relative; overflow:hidden; border-radius:2px;
     box-shadow:0 0 0 1px var(--rule);
+    flex:1 1 0; min-width:0; cursor:pointer;
+    transition: flex .6s cubic-bezier(.2,.7,.2,1);
   }
+  /* Al pasar sobre la galería: todas encogen, la activa se expande */
+  .gal-accordion:hover .gal-cell{ flex:0.7 1 0; }
+  .gal-accordion .gal-cell:hover{ flex:2.1 1 0; }
   .gal-cell img{
-    width:100%; height:100%; object-fit:cover; object-position: top center;
-    filter: contrast(1.25) saturate(0.95) brightness(1.05) hue-rotate(-2deg);
-    transition: transform .8s ease, filter .5s ease;
+    width:100%; height:100%; object-fit:cover; object-position: center;
+    filter: contrast(1.2) saturate(.95) brightness(.95) hue-rotate(-2deg);
+    transition: filter .6s ease;
   }
   .gal-cell::after{
     content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, transparent 50%, rgba(10,8,7,.5));
-    opacity:.6; transition:opacity .4s;
+    background:linear-gradient(180deg, transparent 70%, rgba(10,8,7,.45) 100%);
+    transition:opacity .4s;
   }
   .gal-cell .tag{
-    position:absolute; left:12px; bottom:10px; z-index:2;
+    position:absolute; left:16px; bottom:16px; z-index:2; white-space:nowrap;
     font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.2em;
     color:var(--bone); text-transform:uppercase;
-    opacity:0; transform:translateY(8px); transition: opacity .4s, transform .4s;
+    opacity:0; transform:translateY(8px); transition: opacity .45s .1s, transform .45s .1s;
   }
-  .gal-cell:hover img{ transform:scale(1.08); filter:contrast(1.35) saturate(1.05) brightness(1.1) }
-  .gal-cell:hover::after{ opacity:.95 }
+  .gal-cell .num{
+    position:absolute; left:16px; top:14px; z-index:2;
+    font-family:"Bebas Neue", sans-serif; font-size:30px; line-height:1;
+    color:transparent; -webkit-text-stroke:1px var(--gold-soft);
+    opacity:.7; transition: opacity .4s;
+  }
+  .gal-cell:hover img{ filter:contrast(1.3) saturate(1.05) brightness(1.05); }
   .gal-cell:hover .tag{ opacity:1; transform:translateY(0) }
-
-  /* Layout: 4 vertical images (6 cols each) + 2 horizontal full-width */
-  .g1{ grid-column: span 6; aspect-ratio: 740/1600; }
-  .g2{ grid-column: span 6; aspect-ratio: 740/1600; }
-  .g3{ grid-column: span 6; aspect-ratio: 740/1600; }
-  .g4{ grid-column: span 6; aspect-ratio: 740/1600; }
-  .g5{ grid-column: span 12; aspect-ratio: 1200/1600; max-height: 450px; }
-  .g6{ grid-column: span 12; aspect-ratio: 960/1280; max-height: 400px; }
+  .gal-cell:hover .num{ opacity:0 }
 
   @media(max-width:880px){
-    .gal-grid{ gap:12px }
-    .g1, .g2, .g3, .g4{ grid-column: span 12; aspect-ratio: 740/1600; }
-    .g5{ grid-column: span 12; aspect-ratio: 1200/1600; max-height: 400px; }
-    .g6{ grid-column: span 12; aspect-ratio: 960/1280; max-height: 350px; }
+    .gal-accordion{
+      height:auto; gap:12px;
+      overflow-x:auto; scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch; padding-bottom:10px;
+    }
+    .gal-accordion .gal-cell,
+    .gal-accordion:hover .gal-cell,
+    .gal-accordion .gal-cell:hover{
+      flex:0 0 78%; height:460px; scroll-snap-align:center;
+    }
+    .gal-cell img{ filter:contrast(1.25) saturate(.95) brightness(1) hue-rotate(-2deg); }
+    .gal-cell .tag{ opacity:1; transform:none }
+    .gal-cell .num{ opacity:0 }
   }
 
   /* Marquee strip */
@@ -670,7 +659,6 @@
   .hero-load > *:nth-child(4){ animation-delay:.55s }
   .hero-load > *:nth-child(5){ animation-delay:.70s }
   .hero-photo{ opacity:0; animation: heroPhotoIn 1.4s cubic-bezier(.2,.7,.2,1) forwards; animation-delay:.4s }
-  .hero-ticker{ opacity:0; animation: heroIn 1s ease forwards; animation-delay:1.0s }
 
   @keyframes heroIn{ to{ opacity:1; transform:none } }
   @keyframes heroPhotoIn{ from{ opacity:0; transform: translateY(40px) scale(1.06) } to{ opacity:1; transform: none } }
@@ -698,8 +686,7 @@
   /* ====== Minimum legibility — WCAG text size ====== */
   .mono { font-size: 12px }
   .logo .tag,
-  .hero-photo-stamp .sm,
-  .hero-ticker .lbl,
+  .hero-avail .lbl,
   .map-overlay .l,
   .map-overlay .c,
   .nav-status,
@@ -742,11 +729,6 @@
     pointer-events: none;
   }
 
-  /* ====== dvh fallback para mobile browsers ====== */
-  @supports (min-height: 100dvh) {
-    .hero-grid { min-height: calc(100dvh - 140px); }
-  }
-
   /* ====== CTA ubicación ====== */
   .btn-llegada {
     display: inline-flex; align-items: center; gap: 10px;
@@ -775,9 +757,6 @@
     .t-featured p { font-size: 19px; }
   }
 
-  /* ====== Hero ticker mejorado ====== */
-  .hero-ticker .txt { font-size: 22px; line-height: 1.3; font-weight: 600; }
-
   /* ====== Sobre Aaron ajustes ====== */
   .sobre-quote-mark { font-size: 80px; margin-bottom: -10px; }
   .sobre-photo::after { content: "el local"; }
@@ -792,6 +771,28 @@
     .section-head { border-top: 2px solid rgba(201,165,92,.35); }
   }
 
+  /* ====== WhatsApp FAB ====== */
+  .wsp-fab {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: #25d366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 18px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.4);
+    animation: wsp-ring 2.8s ease-out infinite;
+    transition: transform .2s;
+    text-decoration: none;
+  }
+  .wsp-fab:hover {
+    transform: scale(1.1);
+  }
+  .wsp-fab svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes wsp-ring {
+    0%   { box-shadow: 0 4px 18px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.4); }
+    60%  { box-shadow: 0 4px 18px rgba(37,211,102,.45), 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 4px 18px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,0); }
+  }
+  @media(max-width:700px) { .wsp-fab { bottom: 20px; right: 18px; width: 52px; height: 52px; } }
+
   /* ====== Reduced motion (WCAG 2.1 §2.2.2) ====== */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -802,7 +803,6 @@
     }
     .hero-load > * { opacity: 1 !important; transform: none !important; }
     .hero-photo { opacity: 1 !important; }
-    .hero-ticker { opacity: 1 !important; }
     .marquee-track { animation: none; }
     .reveal { opacity: 1; transform: none; }
     .stagger > * { opacity: 1; transform: none; }
@@ -811,18 +811,6 @@
 </style>
 </head>
 <body>
-
-<!-- Edges -->
-<aside class="edge left" aria-hidden="true">
-  <span class="mono v">Ocotlán · Jalisco · 20.354°N</span>
-  <span class="stripe"></span>
-  <span class="mono v">Sin cita</span>
-</aside>
-<aside class="edge right" aria-hidden="true">
-  <span class="mono v">Est. 2025 · Centro</span>
-  <span class="stripe"></span>
-  <span class="mono v">Corte · Barba · Ceja</span>
-</aside>
 
 <!-- 01 NAV -->
 <header class="nav">
@@ -858,29 +846,24 @@
         <span class="row">Ceja.</span>
       </h1>
       <p class="h-sub">
-        Barbería. <strong>Centro de Ocotlán, Jalisco.</strong> Sin cita.
+        <strong>Sin cita.</strong> Llegas y te cortas.
       </p>
       <div class="hero-cta-row">
-        <div class="scroll-cue">
-          <span class="line"></span>
-          <span>Abajo</span>
+        <div class="hero-avail">
+          <span class="lbl mono">— Hoy</span>
+          <span class="txt serif-i" id="heroAvail">Hay lugar.</span>
         </div>
-        <span class="mono" style="color:var(--bone-dim)">Lun – Sáb · 10:00 — 20:00</span>
+        <a class="btn-wsp" href="https://wa.me/523921917594" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003C6.478 2.003 2 6.481 2 12.006c0 1.832.49 3.597 1.42 5.147L2 22l4.982-1.396A9.944 9.944 0 0012.004 22C17.53 22 22 17.522 22 12.006c0-5.525-4.47-10.003-9.996-10.003zm0 18.214a8.216 8.216 0 01-4.223-1.166l-.303-.18-3.136.878.843-3.062-.197-.314a8.212 8.212 0 01-1.253-4.37c0-4.554 3.697-8.253 8.27-8.253 4.573 0 8.27 3.699 8.27 8.253 0 4.553-3.697 8.214-8.27 8.214z"/></svg>
+          <span>Mándame WhatsApp</span>
+        </a>
+        <span class="mono" style="color:var(--bone-dim)">Lun–Sáb 10–14 / 16–20 · Dom 10–14</span>
       </div>
-      <div></div>
     </div>
 
     <div class="hero-side">
       <div class="hero-photo">
-        <img src="images/corte-5.jpg" alt="Corte profesional - Compa Aaron, Ocotlán, Jalisco" loading="eager" width="1200" height="1600" />
-        <div class="hero-photo-stamp">
-          <span class="big">N.º 001</span>
-          <span class="sm">— Trabajo destacado</span>
-        </div>
-      </div>
-      <div class="hero-ticker">
-        <div class="lbl">— Hoy</div>
-        <div class="txt">Hay lugar.</div>
+        <img src="images/barberia-hero.jpg" alt="Barbería Compa Aaron, Centro de Ocotlán, Jalisco" loading="eager" fetchpriority="high" width="898" height="945" />
       </div>
     </div>
   </div>
@@ -957,10 +940,7 @@
       </div>
     </div>
 
-    <div class="sobre-grid">
-      <div class="sobre-photo reveal">
-        <img src="images/barberia-frontal.jpg" alt="Interior de Compa Aaron, barbería en el Centro de Ocotlán, Jalisco" loading="lazy" width="960" height="1280"/>
-      </div>
+    <div class="sobre-grid" style="grid-template-columns:1fr;max-width:680px;">
       <div class="reveal stagger">
         <span class="sobre-quote-mark">"</span>
         <h3>Aaron R. <em>Barbero.</em></h3>
@@ -992,11 +972,12 @@
       </div>
     </div>
 
-    <div class="gal-grid reveal stagger">
-      <a class="gal-cell g1" href="images/corte-1.jpg" aria-label="Ver foto: Corte clásico con degradado, vista frontal" data-caption="N.º 01 · Corte clásico · Vista frontal"><img src="images/corte-1.jpg" alt="Corte clásico con degradado, vista frontal — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="tag">N.º 01 · Corte</span></a>
-      <a class="gal-cell g2" href="images/corte-2.jpg" aria-label="Ver foto: Corte con acabado lateral bajo neón" data-caption="N.º 02 · Acabado lateral · Ambiente del local"><img src="images/corte-2.jpg" alt="Corte con acabado lateral bajo neón del local — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="tag">N.º 02 · Corte</span></a>
-      <a class="gal-cell g3" href="images/corte-3.jpg" aria-label="Ver foto: Detalle de fade con decoración del local al fondo" data-caption="N.º 03 · Detalle fade · Decoración local"><img src="images/corte-3.jpg" alt="Detalle de fade con arte y neón del local al fondo — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="tag">N.º 03 · Corte</span></a>
-      <a class="gal-cell g4" href="images/corte-4.jpg" aria-label="Ver foto: Fade bajo con acabado limpio, perfil derecho" data-caption="N.º 04 · Fade bajo · Perfil derecho"><img src="images/corte-4.jpg" alt="Fade bajo con acabado limpio, perfil derecho — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="tag">N.º 04 · Corte perfil</span></a>
+    <div class="gal-accordion reveal">
+      <a class="gal-cell" href="images/corte-1.jpg" aria-label="Ver foto: Corte clásico con degradado, vista frontal" data-caption="N.º 01 · Corte clásico · Vista frontal"><img src="images/corte-1.jpg" alt="Corte clásico con degradado, vista frontal — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="num">01</span><span class="tag">N.º 01 · Corte</span></a>
+      <a class="gal-cell" href="images/corte-2.jpg" aria-label="Ver foto: Corte con acabado lateral bajo neón" data-caption="N.º 02 · Acabado lateral · Ambiente del local"><img src="images/corte-2.jpg" alt="Corte con acabado lateral bajo neón del local — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="num">02</span><span class="tag">N.º 02 · Corte</span></a>
+      <a class="gal-cell" href="images/corte-3.jpg" aria-label="Ver foto: Detalle de fade con decoración del local al fondo" data-caption="N.º 03 · Detalle fade · Decoración local"><img src="images/corte-3.jpg" alt="Detalle de fade con arte y neón del local al fondo — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="num">03</span><span class="tag">N.º 03 · Corte</span></a>
+      <a class="gal-cell" href="images/corte-4.jpg" aria-label="Ver foto: Fade bajo con acabado limpio, perfil derecho" data-caption="N.º 04 · Fade bajo · Perfil derecho"><img src="images/corte-4.jpg" alt="Fade bajo con acabado limpio, perfil derecho — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="num">04</span><span class="tag">N.º 04 · Corte perfil</span></a>
+      <a class="gal-cell" href="images/corte-5-v.jpg" aria-label="Ver foto: Corte con degradado, vista frontal" data-caption="N.º 05 · Corte · Vista frontal"><img src="images/corte-5-v.jpg" alt="Corte con degradado vista frontal — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1600"/><span class="num">05</span><span class="tag">N.º 05 · Corte</span></a>
     </div>
 
     <div class="marquee" aria-hidden="true">
@@ -1105,13 +1086,13 @@
 
         <div class="ubi-block">
           <div class="h">Horarios</div>
-          <div class="hours-row"><span class="d">Lunes</span><span class="t">10:00 — 20:00</span></div>
-          <div class="hours-row"><span class="d">Martes</span><span class="t">10:00 — 20:00</span></div>
-          <div class="hours-row"><span class="d">Miércoles</span><span class="t">10:00 — 20:00</span></div>
-          <div class="hours-row"><span class="d">Jueves</span><span class="t">10:00 — 20:00</span></div>
-          <div class="hours-row"><span class="d">Viernes</span><span class="t">10:00 — 21:00</span></div>
-          <div class="hours-row"><span class="d">Sábado</span><span class="t">09:00 — 21:00</span></div>
-          <div class="hours-row off"><span class="d">Domingo</span><span class="t">Cerrado</span></div>
+          <div class="hours-row"><span class="d">Lunes</span><span class="t">10–14 / 16–20</span></div>
+          <div class="hours-row"><span class="d">Martes</span><span class="t">10–14 / 16–20</span></div>
+          <div class="hours-row"><span class="d">Miércoles</span><span class="t">10–14 / 16–20</span></div>
+          <div class="hours-row"><span class="d">Jueves</span><span class="t">10–14 / 16–20</span></div>
+          <div class="hours-row"><span class="d">Viernes</span><span class="t">10–14 / 16–20</span></div>
+          <div class="hours-row"><span class="d">Sábado</span><span class="t">10–14 / 16–20</span></div>
+          <div class="hours-row"><span class="d">Domingo</span><span class="t">10–14</span></div>
         </div>
 
         <div class="ubi-block">
@@ -1160,6 +1141,11 @@
   </div>
 </footer>
 
+<!-- WhatsApp FAB -->
+<a class="wsp-fab" href="https://wa.me/523921917594" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003C6.478 2.003 2 6.481 2 12.006c0 1.832.49 3.597 1.42 5.147L2 22l4.982-1.396A9.944 9.944 0 0012.004 22C17.53 22 22 17.522 22 12.006c0-5.525-4.47-10.003-9.996-10.003zm0 18.214a8.216 8.216 0 01-4.223-1.166l-.303-.18-3.136.878.843-3.062-.197-.314a8.212 8.212 0 01-1.253-4.37c0-4.554 3.697-8.253 8.27-8.253 4.573 0 8.27 3.699 8.27 8.253 0 4.553-3.697 8.214-8.27 8.214z"/></svg>
+</a>
+
 <!-- Lightbox overlay -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada" aria-hidden="true">
   <button class="lb-close" id="lbClose" aria-label="Cerrar foto">✕</button>
@@ -1187,12 +1173,9 @@
       const h = now.getHours();
       const dot = document.getElementById('statusDot');
       const txt = document.getElementById('statusTxt');
-      let open = false;
-      if (day === 0) { open = false; }
-      else if (day === 6) { open = h >= 9 && h < 21; }
-      else if (day === 5) { open = h >= 10 && h < 21; }
-      else { open = h >= 10 && h < 20; }
-      const ticker = document.querySelector('.hero-ticker .txt');
+      const inShift = (h >= 10 && h < 14) || (h >= 16 && h < 20);
+      const open = day === 0 ? (h >= 10 && h < 14) : inShift;
+      const ticker = document.getElementById('heroAvail');
       if (open) {
         dot.style.background = '#42c97a';
         dot.style.boxShadow = '0 0 12px #42c97a';
@@ -1202,7 +1185,8 @@
         dot.style.background = '#b51d1d';
         dot.style.boxShadow = '0 0 12px #b51d1d';
         txt.textContent = 'Cerrado';
-        if (ticker) ticker.textContent = day === 0 ? 'Vuelve el lunes.' : 'Vuelve mañana.';
+        const onBreak = h >= 14 && h < 16;
+        if (ticker) ticker.textContent = onBreak ? 'Reabre a las 16.' : 'Vuelve mañana.';
       }
     } catch (e) {}
   })();
