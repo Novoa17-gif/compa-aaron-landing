@@ -33,7 +33,7 @@
   "areaServed": { "@type": "City", "name": "Ocotlán, Jalisco" },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Calle Morelos s/n, Centro",
+    "streetAddress": "Ramón Corona 655",
     "addressLocality": "Ocotlán",
     "addressRegion": "Jalisco",
     "postalCode": "47800",
@@ -504,38 +504,37 @@
 
   /* ====== TESTIMONIOS ====== */
   .testi{ padding:80px 0 110px }
-  .testi-grid{
-    display:grid; grid-template-columns: repeat(3, 1fr); gap:24px;
+  .testi-quotes{ display:flex; flex-direction:column; }
+  .t-quote{
+    position:relative; overflow:hidden;
+    padding:52px 0 52px 36px;
+    border-left:2px solid var(--blood-glow);
   }
-  @media(max-width:880px){ .testi-grid{ grid-template-columns:1fr } }
-  .t-card{
-    border:1px solid var(--rule); padding:32px 28px 28px;
-    background:linear-gradient(180deg, rgba(20,16,14,.5), rgba(15,11,10,.5));
-    position:relative;
-    transition: transform .4s ease, border-color .4s, background .4s;
+  .t-quote + .t-quote{ border-top:1px solid var(--rule); }
+  .t-quote .t-num{
+    position:absolute; right:-8px; top:50%; transform:translateY(-50%);
+    font-family:"Bebas Neue", sans-serif; font-size:180px; line-height:1;
+    color:transparent; -webkit-text-stroke:1px var(--gold-soft);
+    opacity:.25; pointer-events:none; user-select:none;
   }
-  .t-card:hover{ transform:translateY(-6px); border-color: rgba(201,165,92,.35); background:linear-gradient(180deg, rgba(28,21,18,.7), rgba(20,15,13,.6)); }
-  .t-card .q{
-    font-family:"Bebas Neue", sans-serif; color:var(--blood-glow);
-    font-size:60px; line-height:.5; margin-bottom:14px;
+  .t-quote blockquote{
+    font-family:"Fraunces", serif; font-style:italic;
+    font-size:22px; line-height:1.55; color:var(--bone);
+    margin:0 0 28px 0; max-width:680px; position:relative; z-index:1;
   }
-  .t-card p{
-    font-family:"Fraunces", serif; font-style:italic; font-size:19px;
-    color:var(--bone); line-height:1.45; margin-bottom:24px;
+  .t-quote cite{
+    font-style:normal; display:flex; align-items:center; gap:12px;
+    font-family:"IBM Plex Mono", monospace; font-size:10px;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--bone-dim);
   }
-  .t-card .who{
-    display:flex; align-items:center; gap:12px; color:var(--bone-dim);
-    padding-top:18px; border-top:1px solid var(--rule);
+  .t-quote cite::before{
+    content:''; width:28px; height:1px; background:var(--gold-soft); flex-shrink:0;
   }
-  .t-card .who .av{
-    width:36px; height:36px; border-radius:50%;
-    background:var(--blood-deep); color:var(--bone);
-    font-family:"Bebas Neue", sans-serif; font-size:18px;
-    display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--gold-soft);
+  @media(max-width:880px){
+    .t-quote{ padding:40px 0 40px 24px; }
+    .t-quote blockquote{ font-size:19px; }
+    .t-quote .t-num{ font-size:120px; opacity:.15; }
   }
-  .t-card .who .nm{ font-family:"Fraunces", serif; color:var(--bone); font-size:15px; }
-  .t-card .who .lo{ font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; }
 
   /* ====== UBICACION ====== */
   .ubi{ padding:30px 0 110px }
@@ -692,7 +691,7 @@
   .nav-status,
   .edge .v,
   .sobre-photo::after,
-  .t-card .who .lo,
+  .t-quote cite,
   .foot-bottom { font-size: 11px }
 
   /* ====== Lightbox ====== */
@@ -746,16 +745,6 @@
   .btn-llegada .arr { display: inline-block; transition: transform .3s; }
   .btn-llegada:hover .arr { transform: translateX(4px); }
 
-  /* ====== Testimonios asimétrico ====== */
-  .testi-grid { grid-template-columns: 1.5fr 1fr; }
-  .t-stack { display: flex; flex-direction: column; gap: 24px; }
-  .t-featured { border-left: 3px solid var(--blood-glow); }
-  .t-featured .q { font-size: 80px; }
-  .t-featured p { font-size: 22px; line-height: 1.35; }
-  @media(max-width:880px) {
-    .testi-grid { grid-template-columns: 1fr; }
-    .t-featured p { font-size: 19px; }
-  }
 
   /* ====== Sobre Aaron ajustes ====== */
   .sobre-quote-mark { font-size: 80px; margin-bottom: -10px; }
@@ -973,7 +962,7 @@
     </div>
 
     <div class="gal-accordion reveal">
-      <a class="gal-cell" href="images/corte-1.jpg" aria-label="Ver foto: Corte clásico con degradado, vista frontal" data-caption="N.º 01 · Corte clásico · Vista frontal"><img src="images/corte-1.jpg" alt="Corte clásico con degradado, vista frontal — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1316"/><span class="num">01</span><span class="tag">N.º 01 · Corte</span></a>
+      <a class="gal-cell" href="images/corte-1.jpg" aria-label="Ver foto: Corte con acabado lateral, vista posterior" data-caption="N.º 01 · Acabado lateral · Vista posterior"><img src="images/corte-1.jpg" alt="Corte con acabado lateral, vista posterior — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1316"/><span class="num">01</span><span class="tag">N.º 01 · Corte</span></a>
       <a class="gal-cell" href="images/corte-2.jpg" aria-label="Ver foto: Corte con acabado lateral bajo neón" data-caption="N.º 02 · Acabado lateral · Ambiente del local"><img src="images/corte-2.jpg" alt="Corte con acabado lateral bajo neón del local — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1316"/><span class="num">02</span><span class="tag">N.º 02 · Corte</span></a>
       <a class="gal-cell" href="images/corte-3.jpg" aria-label="Ver foto: Detalle de fade con decoración del local al fondo" data-caption="N.º 03 · Detalle fade · Decoración local"><img src="images/corte-3.jpg" alt="Detalle de fade con arte y neón del local al fondo — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1315"/><span class="num">03</span><span class="tag">N.º 03 · Corte</span></a>
       <a class="gal-cell" href="images/corte-4.jpg" aria-label="Ver foto: Fade bajo con acabado limpio, perfil derecho" data-caption="N.º 04 · Fade bajo · Perfil derecho"><img src="images/corte-4.jpg" alt="Fade bajo con acabado limpio, perfil derecho — Compa Aaron, Ocotlán" loading="lazy" width="740" height="1315"/><span class="num">04</span><span class="tag">N.º 04 · Corte perfil</span></a>
@@ -1003,43 +992,21 @@
       </div>
     </div>
 
-    <div class="testi-grid reveal stagger">
-      <article class="t-card t-featured">
-        <div class="q">"</div>
-        <p>Llevo casi un año viniendo. Buen corte, buen precio. No hay más que decir.</p>
-        <div class="who">
-          <div class="av">R</div>
-          <div>
-            <div class="nm">Rodrigo M.</div>
-            <div class="lo mono">Centro · Ocotlán</div>
-          </div>
-        </div>
-      </article>
-
-      <div class="t-stack">
-        <article class="t-card">
-          <div class="q">"</div>
-          <p>El corte queda bien y el lugar está tranquilo. No tengo queja.</p>
-          <div class="who">
-            <div class="av">J</div>
-            <div>
-              <div class="nm">Jonathan P.</div>
-              <div class="lo mono">Col. Reforma · Ocotlán</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="t-card">
-          <div class="q">"</div>
-          <p>Atiende rápido y se ve que sabe. Salgo conforme cada vez.</p>
-          <div class="who">
-            <div class="av">L</div>
-            <div>
-              <div class="nm">Luis Ángel G.</div>
-              <div class="lo mono">San Vicente · Ocotlán</div>
-            </div>
-          </div>
-        </article>
+    <div class="testi-quotes reveal stagger">
+      <div class="t-quote">
+        <span class="t-num" aria-hidden="true">01</span>
+        <blockquote>Llevo casi un año viniendo. Buen corte, buen precio. No hay más que decir.</blockquote>
+        <cite>Rodrigo M.</cite>
+      </div>
+      <div class="t-quote">
+        <span class="t-num" aria-hidden="true">02</span>
+        <blockquote>El corte queda bien y el lugar está tranquilo. No tengo queja.</blockquote>
+        <cite>Jonathan P.</cite>
+      </div>
+      <div class="t-quote">
+        <span class="t-num" aria-hidden="true">03</span>
+        <blockquote>Atiende rápido y se ve que sabe. Salgo conforme cada vez.</blockquote>
+        <cite>Luis Ángel G.</cite>
       </div>
     </div>
   </div>
@@ -1067,7 +1034,7 @@
         </div>
         <iframe
           title="Mapa de la barbería Compa Aaron en el Centro de Ocotlán, Jalisco"
-          src="https://www.google.com/maps?q=Centro%20de%20Ocotl%C3%A1n%2C%20Jalisco%2C%20Mexico&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps?q=Ram%C3%B3n+Corona+655%2C+Ocotl%C3%A1n%2C+Jalisco%2C+Mexico&t=&z=17&ie=UTF8&iwloc=&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen></iframe>
@@ -1077,10 +1044,9 @@
         <div class="ubi-block">
           <div class="h">Dirección</div>
           <div class="addr">
-            Calle Morelos s/n<br/>
-            Centro, 47800 Ocotlán<br/>
+            Ramón Corona 655<br/>
+            47800 Ocotlán<br/>
             Jalisco, México
-            <em>A media cuadra del kiosko.</em>
           </div>
         </div>
 
@@ -1100,7 +1066,7 @@
         </div>
 
         <div class="ubi-block">
-          <a href="https://www.google.com/maps/search/Calle+Morelos+s%2Fn+Centro+Ocotl%C3%A1n+Jalisco+Mexico" target="_blank" rel="noopener noreferrer" class="btn-llegada">
+          <a href="https://www.google.com/maps/search/Ram%C3%B3n+Corona+655+Ocotl%C3%A1n+Jalisco+Mexico" target="_blank" rel="noopener noreferrer" class="btn-llegada">
             <span>Abrir en Google Maps</span>
             <span class="arr">→</span>
           </a>
@@ -1127,7 +1093,7 @@
 
       <div class="foot-col">
         <h4>Local</h4>
-        <p>Calle Morelos s/n, Centro<br/>Ocotlán, Jalisco · 47800<br/>Lun–Jue 10–20 · Vie 10–21 · Sáb 9–21</p>
+        <p>Ramón Corona 655<br/>Ocotlán, Jalisco · 47800<br/>Lun–Sáb 10–14 / 16–20 · Dom 10–14</p>
       </div>
     </div>
 
@@ -1166,30 +1132,40 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // Open/closed status (local time, MX)
-  (function () {
+  function updateStatus() {
     try {
-      const now = new Date();
+      const mxStr = new Date().toLocaleString('en-US', { timeZone: 'America/Mexico_City' });
+      const now = new Date(mxStr);
       const day = now.getDay();
       const h = now.getHours();
       const dot = document.getElementById('statusDot');
       const txt = document.getElementById('statusTxt');
+      const ticker = document.getElementById('heroAvail');
       const inShift = (h >= 10 && h < 14) || (h >= 16 && h < 20);
       const open = day === 0 ? (h >= 10 && h < 14) : inShift;
-      const ticker = document.getElementById('heroAvail');
       if (open) {
-        dot.style.background = '#42c97a';
-        dot.style.boxShadow = '0 0 12px #42c97a';
-        txt.textContent = 'Abierto';
+        if (dot) { dot.style.background = '#42c97a'; dot.style.boxShadow = '0 0 12px #42c97a'; }
+        if (txt) txt.textContent = 'Abierto';
         if (ticker) ticker.textContent = 'Hay lugar.';
       } else {
-        dot.style.background = '#b51d1d';
-        dot.style.boxShadow = '0 0 12px #b51d1d';
-        txt.textContent = 'Cerrado';
-        const onBreak = h >= 14 && h < 16;
-        if (ticker) ticker.textContent = onBreak ? 'Reabre a las 16.' : 'Vuelve mañana.';
+        if (dot) { dot.style.background = '#b51d1d'; dot.style.boxShadow = '0 0 12px #b51d1d'; }
+        if (txt) txt.textContent = 'Cerrado';
+        let msg;
+        if (h < 10) {
+          msg = 'Abre a las 10.';
+        } else if (h >= 14 && h < 16 && day !== 0) {
+          msg = 'Reabre a las 16.';
+        } else if (day === 0) {
+          msg = 'Vuelve el lunes.';
+        } else {
+          msg = 'Vuelve mañana.';
+        }
+        if (ticker) ticker.textContent = msg;
       }
     } catch (e) {}
-  })();
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
 
   // Subtle parallax on hero photo
   const heroPhoto = document.querySelector('.hero-photo img');
