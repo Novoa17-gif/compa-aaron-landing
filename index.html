@@ -1078,7 +1078,7 @@
     </div>
 
     <div class="ubi-grid">
-      <div class="map-wrap reveal">
+      <div class="map-wrap reveal" style="cursor:pointer;" onclick="window.open('https://www.google.com/maps/search/Ram%C3%B3n+Corona+655+Ocotl%C3%A1n+Jalisco+Mexico','_blank','noopener')">
         <div class="map-overlay">
           <div class="l">— Compa Aaron</div>
           <div class="b">Centro de Ocotlán</div>
@@ -1089,6 +1089,7 @@
           src="https://www.google.com/maps?q=Ram%C3%B3n+Corona+655%2C+Ocotl%C3%A1n%2C+Jalisco%2C+Mexico&t=&z=17&ie=UTF8&iwloc=&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          style="pointer-events:none;"
           allowfullscreen></iframe>
       </div>
 
@@ -1204,9 +1205,9 @@
         if (txt) txt.textContent = 'Cerrado';
         let msg;
         if (h < 10) {
-          msg = 'Abre a las 10.';
+          msg = 'Abre a las 10:00.';
         } else if (h >= 14 && h < 16 && day !== 0) {
-          msg = 'Reabre a las 16.';
+          msg = 'Reabre a las 16:00.';
         } else if (day === 0) {
           msg = 'Vuelve el lunes.';
         } else {
